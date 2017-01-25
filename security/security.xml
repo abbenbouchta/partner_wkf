@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+       <record id="partner_group_user" model="res.groups">
+           <field name="name">Partnaire/Utilisateur</field>
+       </record>
+
+        <record id="partner_group_manager" model="res.groups">
+             <field name="name">Partnaire/Responsable</field>
+             <field name="implied_ids" eval="[(4, ref('partner_group_user'))]"/>
+        </record>
+
+
+    </data>
+</odoo>
