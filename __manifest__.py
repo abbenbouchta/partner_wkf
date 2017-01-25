@@ -20,6 +20,8 @@ Main Features
     ],
     'data': [
         'security/security.xml',
+        "data/sequence.xml",
+        "views/partner_view.xml"
     ],
 
     'demo': [],
