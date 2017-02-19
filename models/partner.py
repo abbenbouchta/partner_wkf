@@ -12,18 +12,18 @@ class Partner(models.Model):
     _inherit = 'res.partner'
 
     old_code = fields.Char(string="Code client", required=False)
-    code = fields.Char(string="Numéro client", required=False)
+    code = fields.Char(string="Numéro client", readonly=False)
 
-    @api.multi
-    @api.depends('name', 'code')
-    def name_get(self):
-        result = []
-        for partner in self:
-            name=partner.name or ''
-            if partner.code:
-                name = '['+partner.code+']'+name
-            result.append((partner.id, name))
-        return result
+    # @api.multi
+    # @api.depends('name', 'code')
+    # def name_get(self):
+    #     result = []
+    #     for partner in self:
+    #         name=partner.name or ''
+    #         if partner.code:
+    #             name = '['+partner.code+']'+name
+    #         result.append((partner.id, name))
+    #     return result
 
     @api.model
     def create(self, data):
